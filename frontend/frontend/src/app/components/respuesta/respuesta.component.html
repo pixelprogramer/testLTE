@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12 respuesta" *ngFor="let pregunta of listRespuestas; let inres = index"
+       [ngStyle]="{'background': pregunta.respondio == true ? '#ff000057': '#e9ecef'}"
+       (click)="responder(pregunta)">
+    <div class="numeroRespuesta">
+      <span>
+        {{inres+1}}
+      </span>
+    </div>
+    <div class="content">
+      {{pregunta.contenido}}
+    </div>
+    <div class="content">
+      <p *ngIf="pregunta.correcta == true" style="color: green">Correcta</p>
+      <p *ngIf="pregunta.correcta == false" style="color: red">Incorrecta</p>
+    </div>
+  </div>
+</div>

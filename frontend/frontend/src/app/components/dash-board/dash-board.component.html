@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Examen del libro: {{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let index of listPreguntas; let i = index" class="header" (click)="cargarPregunta(index,i)">
+      <div>
+        <p>
+          {{i+1}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <app-contexto></app-contexto>
+  <app-pregunta></app-pregunta>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success btnSiguiente" name="btnSiguiente" (click)="siguientePregunta()">Siguiente pregunta</button>
+    </div>
+  </div>
+
+  <app-respuesta></app-respuesta>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success btnSiguiente" name="btnSiguiente" (click)="siguientePregunta()">Siguiente pregunta</button>
+    </div>
+  </div>
+</div>
+
